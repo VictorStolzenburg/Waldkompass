@@ -555,3 +555,266 @@ td{ color: var(--cream-dim); }
   display:inline-block; font-family: var(--font-display); font-size:.82rem;
   border:1px solid var(--ember); color: var(--ember); padding:4px 10px; margin-bottom:16px;
 }
+/* ==========================================================
+   MOBILE RESPONSIVE FIXES
+   ========================================================== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Mobile header ---------- */
+
+@media (max-width: 700px) {
+
+  .nav {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .nav-brand {
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .nav-brand img {
+    height: 48px;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .nav-brand span {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+
+  .nav-toggle {
+    flex: 0 0 auto;
+    font-size: 1.5rem;
+    padding: 4px;
+  }
+
+  .nav-cta {
+    flex: 0 0 auto;
+    gap: 0;
+  }
+
+  .nav-cta .btn {
+    padding: 11px 17px;
+    font-size: .95rem;
+    white-space: nowrap;
+  }
+
+  .nav-cta .btn span.long {
+    display: none;
+  }
+
+  /* General content spacing */
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section--tight {
+    padding: 42px 0;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  /* ---------- Homepage hero ---------- */
+
+  .hero--photo {
+    aspect-ratio: auto;
+    min-height: 680px;
+  }
+
+  .hero-content {
+    padding: 90px 18px 50px;
+  }
+
+  .hero-content .lede {
+    font-size: 1rem;
+    max-width: none;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ---------- Homepage guide section ---------- */
+
+  .section--pine .container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .section--pine .container > div[style*="grid-template-columns"] img {
+    max-width: 280px !important;
+    width: 100%;
+  }
+
+  /* ---------- Tour cards ---------- */
+
+  .tour-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tour-card__head {
+    padding: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tour-card__body {
+    padding: 20px;
+  }
+
+  .tour-card__foot {
+    padding: 0 20px 20px;
+  }
+
+  /* ---------- Add-on cards ---------- */
+
+  .addon-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .addon-card {
+    padding: 20px;
+  }
+
+  /* ---------- Other grids ---------- */
+
+  .field-grid,
+  .price-summary-grid,
+  .stay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .packing-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .site-footer {
+    padding: 44px 0 22px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ---------- Media gallery ---------- */
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-grid .media-featured {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 240px;
+  }
+
+  /* ---------- Tables ---------- */
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ---------- Forms ---------- */
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- Buttons ---------- */
+
+  .btn {
+    min-height: 48px;
+  }
+}
+
+
+/* ---------- Very small phones ---------- */
+
+@media (max-width: 400px) {
+
+  .nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nav-brand img {
+    height: 42px;
+  }
+
+  .nav-brand span {
+    font-size: .95rem;
+  }
+
+  .nav-toggle {
+    font-size: 1.3rem;
+  }
+
+  .nav-cta .btn {
+    padding: 10px 13px;
+  }
+
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
