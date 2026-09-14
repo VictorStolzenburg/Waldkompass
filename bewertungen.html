@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bewertungen – Waldkompass</title>
+<meta name="description" content="Erfahrungsberichte und Bewertungen von Waldkompass-Gästen – und die Möglichkeit, selbst eine Bewertung zu hinterlassen.">
+<link rel="icon" href="images/logo.jpeg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html">
+      <img src="images/logo.jpeg" alt="Waldkompass Logo">
+      <span>Waldkompass</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="tour-1-tag.html">1-Tages-Tour</a></li>
+      <li><a href="tour-2-tage.html">2-Tages-Tour</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a class="active" href="bewertungen.html">Bewertungen</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="buchung.html"><span class="long">Jetzt </span>buchen</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section--tight section--pine">
+  <div class="container">
+    <h1 style="font-size:clamp(2rem,4vw,3rem)">Bewertungen</h1>
+    <p class="lede" style="max-width:60ch">Was unsere Gäste über ihre Tour im Wald erzählen – und Platz für eure eigene Erfahrung.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+
+    <div class="review-summary" id="review-summary" style="display:none">
+      <div>
+        <div class="avg" id="review-avg">–</div>
+        <div class="avg-stars" id="review-avg-stars"></div>
+      </div>
+      <div class="avg-count" id="review-count"></div>
+    </div>
+
+    <h2>Was Gäste sagen</h2>
+    <div id="reviews-list">
+      <p class="review-empty">Bewertungen werden geladen …</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="container" style="max-width:640px">
+    <h2 class="center">Eigene Bewertung abgeben</h2>
+    <p class="center" style="margin:0 auto 32px">Wart ihr schon mit uns im Wald? Wir freuen uns über euer Feedback – nach kurzer Prüfung wird es hier veröffentlicht.</p>
+
+    <form id="review-form" novalidate>
+      <div class="form-grid">
+        <div>
+          <label for="review-name">Name</label>
+          <input type="text" id="review-name" name="name" required>
+        </div>
+        <div>
+          <label for="review-tour">Welche Tour war es?</label>
+          <select id="review-tour" name="tour">
+            <option value="">Nicht angegeben</option>
+            <option value="1-tag">1-Tages-Tour</option>
+            <option value="2-tage">2-Tages-Tour</option>
+          </select>
+        </div>
+        <div class="full">
+          <label>Bewertung</label>
+          <div class="rating-picker" id="rating-picker" role="radiogroup" aria-label="Sterne-Bewertung">
+            <button type="button" data-value="1" aria-label="1 Stern">★</button>
+            <button type="button" data-value="2" aria-label="2 Sterne">★</button>
+            <button type="button" data-value="3" aria-label="3 Sterne">★</button>
+            <button type="button" data-value="4" aria-label="4 Sterne">★</button>
+            <button type="button" data-value="5" aria-label="5 Sterne">★</button>
+          </div>
+          <input type="hidden" id="review-rating" name="rating" required>
+          <p class="field-hint" id="rating-hint">Bitte wählt eine Sternebewertung.</p>
+        </div>
+        <div class="full">
+          <label for="review-comment">Euer Erfahrungsbericht</label>
+          <textarea id="review-comment" name="comment" rows="4" placeholder="Wie war die Tour, was hat euch besonders gefallen?"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:16px">Bewertung abschicken</button>
+      <div class="review-pending-note" id="review-pending-note">✅ Danke für euer Feedback! Eure Bewertung wird nach kurzer Prüfung auf dieser Seite veröffentlicht.</div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand"><img src="images/logo.jpeg" alt="Waldkompass Logo"><span>Waldkompass</span></div>
+      <p class="small">Survival- und Outdoor-Touren im Biosphärenreservat Flusslandschaft Elbe</p>
+    </div>
+    <div>
+      <h4>Touren</h4>
+      <ul>
+        <li><a href="tour-1-tag.html">1-Tages-Tour</a></li>
+        <li><a href="tour-2-tage.html">2-Tages-Tour</a></li>
+        <li><a href="buchung.html">Buchungsanfrage</a></li>
+        <li><a href="zahlung.html">Zahlung & Preise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Unternehmen</h4>
+      <ul>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="bewertungen.html">Bewertungen</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="#" onclick="window.waldkompassOpenCookieSettings();return false;">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Waldkompass</span>
+    <span><a href="impressum.html">Impressum</a> &nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp; <a href="agb.html">AGB</a></span>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buchungsanfrage – Waldkompass</title>
+<meta name="description" content="Fragt eure Waldkompass-Tour an: 1 oder 2 Tage, Zusatzleistungen und Übernachtung ganz nach Wunsch.">
+<link rel="icon" href="images/logo.jpeg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html">
+      <img src="images/logo.jpeg" alt="Waldkompass Logo">
+      <span>Waldkompass</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="tour-1-tag.html">1-Tages-Tour</a></li>
+      <li><a href="tour-2-tage.html">2-Tages-Tour</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="bewertungen.html">Bewertungen</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="buchung.html"><span class="long">Jetzt </span>buchen</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section--tight section--pine">
+  <div class="container">
+    <span class="hero-badge"><span class="dot"></span>Direkt reservieren</span>
+    <h1 style="font-size:clamp(2rem,4vw,3rem)">Tour anfragen</h1>
+    <p class="lede" style="max-width:60ch">Füllt das Formular aus, um euren Termin zu reservieren. Ihr erhaltet direkt eure Buchungsnummer und innerhalb von 24 Stunden unsere Bestätigung mit den Zahlungsinformationen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:820px">
+
+    <div class="callout">
+      <strong>So funktioniert die Reservierung:</strong> Wählt unten Tour, Termin und Details – der Termin wird für euch vorgemerkt. Ihr bekommt sofort eine Buchungsnummer per E-Mail. Wir prüfen anschließend kurzfristig die Verfügbarkeit und schicken euch <strong>innerhalb von 24 Stunden eine Bestätigung</strong> mit den Zahlungsinformationen. <strong>Bitte überweist den Betrag erst, nachdem ihr diese Bestätigung von uns erhalten habt</strong> – nicht direkt nach dem Absenden des Formulars.
+    </div>
+
+    <form id="booking-form" novalidate>
+      <fieldset style="margin-bottom:24px">
+        <legend>Eure Tour</legend>
+        <div class="form-grid">
+          <div>
+            <label for="tour-type">Welche Tour interessiert euch?</label>
+            <select id="tour-type" name="tour-type" required>
+              <option value="1-tag">1-Tages-Tour</option>
+              <option value="2-tage">2-Tages-Tour</option>
+              <option value="unsicher">Noch unsicher / Beratung gewünscht</option>
+            </select>
+          </div>
+          <div>
+            <label for="date-display">Wunschtermin</label>
+            <div class="date-picker" style="position:relative">
+              <button type="button" id="date-display" class="date-picker-trigger" aria-haspopup="dialog" aria-expanded="false">Datum wählen</button>
+              <input type="hidden" id="date" name="date" required>
+              <div id="date-picker-popover" class="date-picker-popover" role="dialog" aria-label="Termin auswählen" hidden>
+                <div class="date-picker-header">
+                  <button type="button" id="date-picker-prev" aria-label="Vorheriger Monat">‹</button>
+                  <span id="date-picker-month-label"></span>
+                  <button type="button" id="date-picker-next" aria-label="Nächster Monat">›</button>
+                </div>
+                <div class="date-picker-weekdays">
+                  <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+                </div>
+                <div id="date-picker-grid" class="date-picker-grid"></div>
+              </div>
+            </div>
+            <p class="field-hint" id="date-hint">Nur Samstage und Sonntage sind auswählbar – bei der 2-Tages-Tour nur Samstage (Beginn der Tour).</p>
+          </div>
+          <div>
+            <label for="participants">Teilnehmerzahl</label>
+            <input type="number" id="participants" name="participants" min="1" required>
+            <p class="field-hint" id="participants-warning" style="display:none;color:var(--ember-dark)">Unsere Touren sind für Gruppen ab 5 Personen ausgelegt. Wir melden uns, um eine passende Lösung zu finden.</p>
+          </div>
+          <div id="overnight-field" style="display:none">
+            <label for="overnight">Übernachtung (nur 2-Tages-Tour)</label>
+            <select id="overnight" name="overnight">
+              <option value="camp">Camp im Wald (selbst gebaut)</option>
+              <option value="campingplatz">Campingplatz</option>
+              <option value="hotel">Hotel in der Nähe</option>
+              <option value="offen">Noch offen / Beratung gewünscht</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid" id="kids-pricing-field" style="margin-top:16px">
+          <div>
+            <label for="participants-u18">Davon Kinder/Jugendliche unter 18</label>
+            <input type="number" id="participants-u18" name="participants-u18" min="0" value="0">
+          </div>
+          <div>
+            <label for="participants-u14">Davon Kinder unter 14</label>
+            <input type="number" id="participants-u14" name="participants-u14" min="0" value="0">
+          </div>
+          <div class="full">
+            <p class="field-hint">Nur für die 1-Tages-Tour: 99&nbsp;€ pro Erwachsenem, 79&nbsp;€ für Jugendliche unter 18, 69&nbsp;€ für Kinder unter 14.</p>
+            <p class="field-hint" id="kids-warning" style="display:none;color:var(--ember-dark)">⚠️ Bitte prüft die Angaben: "unter 18" und "unter 14" dürfen die Gesamt-Teilnehmerzahl nicht übersteigen, und "unter 14" darf "unter 18" nicht übersteigen.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset style="margin-bottom:24px">
+        <legend>Zusatzleistungen</legend>
+        <p class="field-hint" style="margin-top:0">Kochen (nur 1-Tages-Tour) & Kanu je 25&nbsp;€ pro Person, Angeln 55&nbsp;€ pro Person.</p>
+        <div class="check-row" id="kochen-field">
+          <input type="checkbox" id="addon-kochen" name="addons" value="Kochen am Lagerfeuer (ggf. mit regionalen Produkten), +25€/Person">
+          <label for="addon-kochen">🍳 Kochen am Lagerfeuer (+25&nbsp;€/Person) – auf Wunsch gegen Aufpreis mit hochwertigen Produkten von regionalen Landwirten und Förstern</label>
+        </div>
+        <p class="field-hint" id="kochen-included-note" style="display:none">🍳 Kochen in der Natur ist bei der 2-Tages-Tour bereits im Grundpreis inklusive.</p>
+        <div class="check-row">
+          <input type="checkbox" id="addon-kanu" name="addons" value="Kanu-Tour & Natur entdecken, +25€/Person">
+          <label for="addon-kanu">🛶 Kanu-Tour & Natur entdecken (+25&nbsp;€/Person)</label>
+        </div>
+        <div class="check-row" id="angling-field" style="display:none">
+          <input type="checkbox" id="addon-angeln" name="addons" value="Angeln & Fisch essen am Lagerfeuer, +55€/Person">
+          <label for="addon-angeln">🎣 Angeln & Fisch essen am Lagerfeuer (nur 2-Tages-Tour, +55&nbsp;€/Person)</label>
+        </div>
+      </fieldset>
+
+      <p class="field-hint" id="weekend-warning" style="display:none;color:var(--ember-dark)">⚠️ Unsere Touren finden nur an Wochenenden statt. Euer Wunschtermin fällt auf einen Werktag – bitte wählt für die 1-Tages-Tour einen Samstag oder Sonntag bzw. für die 2-Tages-Tour einen Samstag als Starttag.</p>
+
+      <div class="price-estimate" id="price-estimate" style="display:none"></div>
+
+      <fieldset style="margin-bottom:24px">
+        <legend>Eure Kontaktdaten</legend>
+        <div class="form-grid">
+          <div><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+          <div><label for="email">E-Mail</label><input type="email" id="email" name="email"></div>
+          <div>
+            <label for="phone">Telefon</label><input type="tel" id="phone" name="phone">
+            <p class="field-hint">Bitte mindestens eine Kontaktmöglichkeit angeben – E-Mail oder Telefon.</p>
+          </div>
+          <div class="full">
+            <p class="field-hint" id="contact-warning" style="display:none;color:var(--ember-dark)">⚠️ Bitte gebt E-Mail oder Telefon an, damit wir euch Termin, Angebot und Zahlungsinfos zusenden können.</p>
+          </div>
+          <div class="full"><label for="message">Nachricht (optional)</label><textarea id="message" name="message" rows="4" placeholder="Besondere Wünsche, Barrierefreiheit, Allergien, Anlass der Gruppe …"></textarea></div>
+        </div>
+      </fieldset>
+
+      <div class="check-row">
+        <input type="checkbox" id="agree-agb" required>
+        <label for="agree-agb">Ich habe die <a href="agb.html" target="_blank">AGB</a> (inkl. Stornobedingungen in § 6) gelesen und akzeptiere sie.</label>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" id="agree-privacy" required>
+        <label for="agree-privacy">Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung der Anfrage einverstanden.</label>
+      </div>
+
+      <div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <button type="submit" class="btn btn-primary">Termin reservieren</button>
+        <a id="booking-mailto" class="btn" style="display:none" href="#">Zusätzlich per E-Mail senden (optional)</a>
+      </div>
+      <p class="field-hint">Eure Reservierung wird direkt an uns übermittelt. Der Button „Zusätzlich per E-Mail senden“ öffnet zur Sicherheit auch euer eigenes E-Mail-Programm mit einer Kopie – das ist optional.</p>
+    </form>
+
+    <div id="booking-summary" class="form-summary" style="display:none;margin-top:32px"></div>
+
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="container center" style="max-width:640px">
+    <h2>Wie geht es nach der Reservierung weiter?</h2>
+    <div class="steps" style="text-align:left">
+      <div class="step"><div class="step-num"></div><div><h3>Buchungsnummer erhalten</h3><p>Direkt nach dem Absenden erhaltet ihr eure Buchungsnummer und eine Zusammenfassung eurer Angaben – auf der Seite und per E-Mail, falls angegeben.</p></div></div>
+      <div class="step"><div class="step-num"></div><div><h3>Bestätigung innerhalb von 24 Stunden</h3><p>Wir prüfen die Verfügbarkeit eures Termins und schicken euch innerhalb von 24 Stunden eine Bestätigung mit den Zahlungsinformationen – mehr dazu auf unserer <a href="zahlung.html">Zahlungsseite</a>. Bitte überweist erst nach dieser Bestätigung.</p></div></div>
+      <div class="step"><div class="step-num"></div><div><h3>Ab in den Wald</h3><p>Nach Zahlungseingang bekommt ihr eine Packliste und alle Infos zum Treffpunkt (Stadthafen Grabow) – und dann kann es losgehen.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand"><img src="images/logo.jpeg" alt="Waldkompass Logo"><span>Waldkompass</span></div>
+      <p class="small">Survival- und Outdoor-Touren im Biosphärenreservat Flusslandschaft Elbe</p>
+    </div>
+    <div>
+      <h4>Touren</h4>
+      <ul>
+        <li><a href="tour-1-tag.html">1-Tages-Tour</a></li>
+        <li><a href="tour-2-tage.html">2-Tages-Tour</a></li>
+        <li><a href="buchung.html">Buchungsanfrage</a></li>
+        <li><a href="zahlung.html">Zahlung & Preise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Unternehmen</h4>
+      <ul>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="bewertungen.html">Bewertungen</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="#" onclick="window.waldkompassOpenCookieSettings();return false;">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Waldkompass</span>
+    <span><a href="impressum.html">Impressum</a> &nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp; <a href="agb.html">AGB</a></span>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
