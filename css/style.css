@@ -614,9 +614,12 @@ video {
     white-space: nowrap;
   }
 
-  .nav-cta .btn span.long {
-    display: none;
-  }
+.nav-cta .btn {
+    padding: 11px 17px;
+    font-size: .95rem;
+    white-space: nowrap;
+    text-transform: none;
+}
 
   /* General content spacing */
   .container {
