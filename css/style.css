@@ -821,3 +821,36 @@ video {
     padding-right: 14px;
   }
 }
+/* ==========================================================
+   FINAL MOBILE POLISH
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  /* Keep the complete booking label on mobile */
+  .nav-cta .btn span.long {
+    display: inline;
+  }
+
+  .nav-cta .btn {
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  /* Improve readability over the hero photograph */
+  .hero--photo .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6,15,10,.78) 0%,
+        rgba(6,15,10,.62) 45%,
+        rgba(6,15,10,.48) 75%,
+        rgba(6,15,10,.62) 100%
+      );
+  }
+
+  .hero--photo .hero-content h1,
+  .hero--photo .hero-content .lede {
+    text-shadow: 0 2px 8px rgba(0,0,0,.75);
+  }
+}
