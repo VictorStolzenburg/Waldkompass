@@ -23,6 +23,7 @@
       <li><a href="ueber-uns.html">Über uns</a></li>
       <li><a href="bewertungen.html">Bewertungen</a></li>
       <li><a href="faq.html">FAQ</a></li>
+      <li><a href="gutschein.html">Gutschein</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <div class="nav-cta">
@@ -80,7 +81,7 @@
           <div>
             <label for="participants">Teilnehmerzahl</label>
             <input type="number" id="participants" name="participants" min="1" required>
-            <p class="field-hint" id="participants-warning" style="display:none;color:var(--ember-dark)">Unsere Touren sind für Gruppen ab 5 Personen ausgelegt. Wir melden uns, um eine passende Lösung zu finden.</p>
+            <p class="field-hint" id="participants-warning" style="display:none;color:var(--ember-dark)">Unsere Touren sind für Gruppen ab 4 Personen ausgelegt. Wir melden uns, um eine passende Lösung zu finden.</p>
           </div>
           <div id="overnight-field" style="display:none">
             <label for="overnight">Übernachtung (nur 2-Tages-Tour)</label>
@@ -112,17 +113,17 @@
         <legend>Zusatzleistungen</legend>
         <p class="field-hint" style="margin-top:0">Kochen (nur 1-Tages-Tour) & Kanu je 25&nbsp;€ pro Person, Angeln 55&nbsp;€ pro Person.</p>
         <div class="check-row" id="kochen-field">
-         <input type="checkbox" id="addon-kochen" name="addons" value="Kochen am Lagerfeuer inkl. regionaler Produkte, +25€/Person">
-<label for="addon-kochen">🍳 Kochen am Lagerfeuer inkl. hochwertiger Produkte von regionalen Landwirten und Förstern (+25&nbsp;€/Person)</label>
+          <input type="checkbox" id="addon-kochen" name="addons" value="Kochen am Lagerfeuer (ggf. mit regionalen Produkten), +25€/Person">
+          <label for="addon-kochen"><span class="btn-icon" style="color:var(--ember)"><svg viewBox="0 0 32 32" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16h16v6a8 8 0 01-16 0v-6z"/><path d="M6 16h20" fill="none"/><path d="M12 10c0 2 2 2 2 4M18 10c0 2 2 2 2 4" fill="none"/></svg></span> Kochen am Lagerfeuer (+25&nbsp;€/Person) – auf Wunsch gegen Aufpreis mit hochwertigen Produkten von regionalen Landwirten und Förstern</label>
         </div>
-        <p class="field-hint" id="kochen-included-note" style="display:none">🍳 Kochen in der Natur ist bei der 2-Tages-Tour bereits im Grundpreis inklusive.</p>
+        <p class="field-hint" id="kochen-included-note" style="display:none">Kochen in der Natur ist bei der 2-Tages-Tour bereits im Grundpreis inklusive.</p>
         <div class="check-row">
           <input type="checkbox" id="addon-kanu" name="addons" value="Kanu-Tour & Natur entdecken, +25€/Person">
-          <label for="addon-kanu">🛶 Kanu-Tour & Natur entdecken (+25&nbsp;€/Person)</label>
+          <label for="addon-kanu"><span class="btn-icon" style="color:var(--ember)"><svg viewBox="0 0 32 32" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c4 4 20 4 24 0"/><path d="M4 20c2-6 22-6 24 0"/><path d="M9 9l14 10" fill="none"/><path d="M8 8l3 2-1 3M23 19l1 3-3 1" fill="none"/></svg></span> Kanu-Tour & Natur entdecken (+25&nbsp;€/Person)</label>
         </div>
         <div class="check-row" id="angling-field" style="display:none">
           <input type="checkbox" id="addon-angeln" name="addons" value="Angeln & Fisch essen am Lagerfeuer, +55€/Person">
-          <label for="addon-angeln">🎣 Angeln & Fisch essen am Lagerfeuer (nur 2-Tages-Tour, +55&nbsp;€/Person)</label>
+          <label for="addon-angeln"><span class="btn-icon" style="color:var(--ember)"><svg viewBox="0 0 32 32" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16c4-6 14-6 18 0-4 6-14 6-18 0z"/><path d="M24 16l4-4v8z"/><circle cx="10" cy="15" r="0.9" fill="currentColor" fill-opacity="1" stroke="none"/></svg></span> Angeln & Fisch essen am Lagerfeuer (nur 2-Tages-Tour, +55&nbsp;€/Person)</label>
         </div>
       </fieldset>
 
@@ -173,7 +174,7 @@
     <div class="steps" style="text-align:left">
       <div class="step"><div class="step-num"></div><div><h3>Buchungsnummer erhalten</h3><p>Direkt nach dem Absenden erhaltet ihr eure Buchungsnummer und eine Zusammenfassung eurer Angaben – auf der Seite und per E-Mail, falls angegeben.</p></div></div>
       <div class="step"><div class="step-num"></div><div><h3>Bestätigung innerhalb von 24 Stunden</h3><p>Wir prüfen die Verfügbarkeit eures Termins und schicken euch innerhalb von 24 Stunden eine Bestätigung mit den Zahlungsinformationen – mehr dazu auf unserer <a href="zahlung.html">Zahlungsseite</a>. Bitte überweist erst nach dieser Bestätigung.</p></div></div>
-      <div class="step"><div class="step-num"></div><div><h3>Ab in den Wald</h3><p>Nach Zahlungseingang bekommt ihr eine Packliste und alle Infos zum Treffpunkt (Stadthafen Grabow) – und dann kann es losgehen.</p></div></div>
+      <div class="step"><div class="step-num"></div><div><h3>Ab in den Wald</h3><p>Nach Zahlungseingang bekommt ihr eine Packliste und alle Infos zum Treffpunkt (Campingplatz Fresenbrügge) – und dann kann es losgehen.</p></div></div>
     </div>
   </div>
 </section>
@@ -191,6 +192,7 @@
         <li><a href="tour-2-tage.html">2-Tages-Tour</a></li>
         <li><a href="buchung.html">Buchungsanfrage</a></li>
         <li><a href="zahlung.html">Zahlung & Preise</a></li>
+      <li><a href="gutschein.html">Gutschein</a></li>
       </ul>
     </div>
     <div>
