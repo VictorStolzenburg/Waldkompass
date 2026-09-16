@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (participants) {
     participants.addEventListener('input', function () {
       var val = parseInt(participants.value, 10);
-      participantsWarning.style.display = (val && val < 5) ? 'block' : 'none';
+      participantsWarning.style.display = (val && val < 4) ? 'block' : 'none';
       updateKidsWarning();
       updatePriceEstimate();
     });
